@@ -34,3 +34,4 @@ colnames(alldata)<-gsub("mean", "Mean",colnames(alldata))
 colnames(alldata)<-gsub("std", "Std",colnames(alldata))
 #creating the final tidy data set with the average of each variable for each activity and each subject.
 alldatamean<- alldata %>% group_by(activity, subject) %>% summarise_all(funs(mean))
+write.table(alldatamean,"tidydata.txt",sep="\t")

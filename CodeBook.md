@@ -1,11 +1,94 @@
-This is the course project for the Getting and Cleaning Data Coursera course. The R script, run_analysis.R, does the following:
+# Codebook
+## Script Details
+The data was downloaded from the below link, "http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones". Unzipped the zip file. Actvity lables and features were loaded in to R. The features which are related to 'mean' and 'standard deviation' were extracted. train and test data sets were loaded in to R and columns which are related to 'mean' and 'standard deviation' are extracted. All the train and test data sets were merged in to single dataset. Colum names were modified to make the dataset tidier. An independent tidy data set was created from this dataset with the average of each variable for each activity and each subject.
+## Dataset  Details 
+The tidy data set contains 180 observation of 81 variables.
 
-* Download the dataset if it does not already exist in the working directory.
-* Loads the activity labels and features.
-* Extracts features related to mean and standard deviation measurements.
-* Loads both the training and test datasets.
-* Extracts columns in the training and test datasets, which reflect a mean or standard deviation.
-* Loads the activity and subject data for training and test datasets, and merges those columns with the datasets.
-* Merges the two datasets.
-* modifies the variable names to Make the merged dataset a tidier one.
-* Creates an independent tidy data set with the average of each variable for each activity and each subject.
+The 81 variables are listed below. Among which activity and subject are key columns 
+* activity - The type of activity performed when the corresponding measurements were taken, int, 6 possible values:
+1. WALKING: subject was walking
+2. WALKING_UPSTAIRS: subject was walking upstairs
+3. WALKING_DOWNSTAIRS: subject was walking downstairs
+4. SITTING: subject was sitting
+5. STANDING: subject was standing
+6. LAYING: subject was laying
+* subject - The ID of the test subject, int, ranges from 1 to 30.
+* tBodyAccMeanX - Mean value for this feature, num (range: -1:1)
+* tBodyAccMeanY	- Mean value for this feature, num (range: -1:1)
+* tBodyAccMeanZ	- Mean value for this feature, num (range: -1:1)
+* tBodyAccStdX - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyAccStdY - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyAccStdZ - Standard Deviation value for this feature, num (range: -1:1)
+* tGravityAccMeanX - Mean value for this feature, num (range: -1:1)
+* tGravityAccMeanY - Mean value for this feature, num (range: -1:1)
+* tGravityAccMeanZ - Mean value for this feature, num (range: -1:1)
+* tGravityAccStdX - Standard Deviation value for this feature, num (range: -1:1)
+* tGravityAccStdY - Standard Deviation value for this feature, num (range: -1:1)
+* tGravityAccStdZ - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyAccJerkMeanX - Mean value for this feature, num (range: -1:1)
+* tBodyAccJerkMeanY - Mean value for this feature, num (range: -1:1)
+* tBodyAccJerkMeanZ - Mean value for this feature, num (range: -1:1)
+* tBodyAccJerkStdX - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyAccJerkStdY - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyAccJerkStdZ - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyGyroMeanX - Mean value for this feature, num (range: -1:1)
+* tBodyGyroMeanY - Mean value for this feature, num (range: -1:1)
+* tBodyGyroMeanZ - Mean value for this feature, num (range: -1:1)
+* tBodyGyroStdX - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyGyroStdY - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyGyroStdZ - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyGyroJerkMeanX - Mean value for this feature, num (range: -1:1)
+* tBodyGyroJerkMeanY - Mean value for this feature, num (range: -1:1)
+* tBodyGyroJerkMeanZ - Mean value for this feature, num (range: -1:1)
+* tBodyGyroJerkStdX - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyGyroJerkStdY - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyGyroJerkStdZ - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyAccMagMean - Mean value for this feature, num (range: -1:1)
+* tBodyAccMagStd - Standard Deviation value for this feature, num (range: -1:1)
+* tGravityAccMagMean - Mean value for this feature, num (range: -1:1)
+* tGravityAccMagStd - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyAccJerkMagMean - Mean value for this feature, num (range: -1:1)
+* tBodyAccJerkMagStd - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyGyroMagMean - Mean value for this feature, num (range: -1:1)
+* tBodyGyroMagStd - Standard Deviation value for this feature, num (range: -1:1)
+* tBodyGyroJerkMagMean - Mean value for this feature, num (range: -1:1)
+* tBodyGyroJerkMagStd - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyAccMeanX	- Mean value for this feature, num (range: -1:1)
+* fBodyAccMeanY	- Mean value for this feature, num (range: -1:1)
+* fBodyAccMeanZ	- Mean value for this feature, num (range: -1:1)
+* fBodyAccStdX	- Standard Deviation value for this feature, num (range: -1:1)
+* fBodyAccStdY - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyAccStdZ - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyAccMeanFreqX - Mean value for this feature, num (range: -1:1)
+* fBodyAccMeanFreqY - Mean value for this feature, num (range: -1:1)
+* fBodyAccMeanFreqZ - Mean value for this feature, num (range: -1:1)
+* fBodyAccJerkMeanX - Mean value for this feature, num (range: -1:1)
+* fBodyAccJerkMeanY - Mean value for this feature, num (range: -1:1)
+* fBodyAccJerkMeanZ - Mean value for this feature, num (range: -1:1)
+* fBodyAccJerkStdX - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyAccJerkStdY - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyAccJerkStdZ - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyAccJerkMeanFreqX	- Mean value for this feature, num (range: -1:1)
+* fBodyAccJerkMeanFreqY	- Mean value for this feature, num (range: -1:1)
+* fBodyAccJerkMeanFreqZ	- Mean value for this feature, num (range: -1:1)
+* fBodyGyroMeanX - Mean value for this feature, num (range: -1:1)
+* fBodyGyroMeanY - Mean value for this feature, num (range: -1:1)
+* fBodyGyroMeanZ - Mean value for this feature, num (range: -1:1)
+* fBodyGyroStdX - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyGyroStdY - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyGyroStdZ - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyGyroMeanFreqX - Mean value for this feature, num (range: -1:1)
+* fBodyGyroMeanFreqY - Mean value for this feature, num (range: -1:1)
+* fBodyGyroMeanFreqZ - Mean value for this feature, num (range: -1:1)
+* fBodyAccMagMean - Mean value for this feature, num (range: -1:1)
+* fBodyAccMagStd - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyAccMagMeanFreq - Mean value for this feature, num (range: -1:1)
+* fBodyBodyAccJerkMagMean - Mean value for this feature, num (range: -1:1)
+* fBodyBodyAccJerkMagStd - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyBodyAccJerkMagMeanFreq - Mean value for this feature, num (range: -1:1)
+* fBodyBodyGyroMagMean - Mean value for this feature, num (range: -1:1)
+* fBodyBodyGyroMagStd - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyBodyGyroMagMeanFreq - Mean value for this feature, num (range: -1:1)
+* fBodyBodyGyroJerkMagMean - Mean value for this feature, num (range: -1:1)
+* fBodyBodyGyroJerkMagStd - Standard Deviation value for this feature, num (range: -1:1)
+* fBodyBodyGyroJerkMagMeanFreq - Mean value for this feature, num (range: -1:1)
